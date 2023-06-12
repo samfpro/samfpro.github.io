@@ -115,7 +115,16 @@
       slides[index].classList.add('active');
     }
     
-    const slideIndex = 0; // Set the initial slide index
+    let slideIndex = 0; // Set the initial slide index
+    const slides = document.getElementsByClassName('slide');
+    
+    function showNextSlide() {
+      slideIndex = (slideIndex + 1) % slides.length;
+      activateSlide(slideIndex);
+    }
+    
+    // Show the next slide every 3 seconds
+    setInterval(showNextSlide, 3000);
     
     // Call the activateSlide function to show the initial slide
     activateSlide(slideIndex);
