@@ -4,66 +4,7 @@
   <meta charset="UTF-8">
   <title>SamFProSoftware</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-    
-    header {
-      background-color: #333;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-    }
-    
-    nav {
-      background-color: #666;
-      color: #fff;
-      padding: 10px;
-      text-align: center;
-    }
-    
-    main {
-      padding: 20px;
-    }
-    
-    h1 {
-      font-size: 32px;
-    }
-    
-    h2 {
-      font-size: 24px;
-    }
-    
-    .project-list {
-      list-style: none;
-      padding: 0;
-    }
-    
-    .project-list li {
-      margin-bottom: 10px;
-    }
-    
-    .slide-container {
-      position: relative;
-      height: 300px;
-      overflow: hidden;
-    }
-    
-    .slide {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      opacity: 0;
-      transition: opacity 0.5s ease-in-out;
-    }
-    
-    .slide.active {
-      opacity: 1;
-    }
+    /* ... CSS styles ... */
   </style>
 </head>
 <body>
@@ -105,29 +46,31 @@
   </main>
   
   <script>
-    function activateSlide(index) {
-      const slides = document.getElementsByClassName('slide');
-      
-      for (let i = 0; i < slides.length; i++) {
-        slides[i].classList.remove('active');
+    document.addEventListener('DOMContentLoaded', function() {
+      function activateSlide(index) {
+        const slides = document.getElementsByClassName('slide');
+
+        for (let i = 0; i < slides.length; i++) {
+          slides[i].classList.remove('active');
+        }
+
+        slides[index].classList.add('active');
       }
-      
-      slides[index].classList.add('active');
-    }
-    
-    let slideIndex = 0; // Set the initial slide index
-    const slides = document.getElementsByClassName('slide');
-    
-    function showNextSlide() {
-      slideIndex = (slideIndex + 1) % slides.length;
+
+      let slideIndex = 0; // Set the initial slide index
+      const slides = document.getElementsByClassName('slide');
+
+      function showNextSlide() {
+        slideIndex = (slideIndex + 1) % slides.length;
+        activateSlide(slideIndex);
+      }
+
+      // Show the next slide every 3 seconds
+      setInterval(showNextSlide, 3000);
+
+      // Call the activateSlide function to show the initial slide
       activateSlide(slideIndex);
-    }
-    
-    // Show the next slide every 3 seconds
-    setInterval(showNextSlide, 3000);
-    
-    // Call the activateSlide function to show the initial slide
-    activateSlide(slideIndex);
+    });
   </script>
 </body>
 </html>
