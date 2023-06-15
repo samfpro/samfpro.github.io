@@ -67,6 +67,13 @@
     .slide.active {
       opacity: 1;
     }
+    
+    .project-image {
+      width: 200px;
+      height: 200px;
+      background-color: #ccc;
+      margin-bottom: 10px;
+    }
   </style>
 </head>
 <body>
@@ -135,16 +142,19 @@
             top: targetOffset,
             behavior: 'smooth'
           });
+
+          // Activate the target section
+          activateSlide(targetSection);
         });
       });
 
       // Additional code for the slide functionality
-      function activateSlide(index) {
+      function activateSlide(targetSection) {
         const slides = document.getElementsByClassName('slide');
         for (let i = 0; i < slides.length; i++) {
           slides[i].classList.remove('active');
         }
-        slides[index].classList.add('active');
+        targetSection.classList.add('active');
       }
 
       let slideIndex = 0; // Set the initial slide index
@@ -152,14 +162,14 @@
 
       function showNextSlide() {
         slideIndex = (slideIndex + 1) % slides.length;
-        activateSlide(slideIndex);
+        activateSlide(slides[slideIndex]);
       }
 
       // Show the next slide every 3 seconds
       setInterval(showNextSlide, 3000);
 
       // Call the activateSlide function to show the initial slide
-      activateSlide(slideIndex);
+      activateSlide(slides[slideIndex]);
     });
   </script>
 </body>
