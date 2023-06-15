@@ -4,7 +4,69 @@
   <meta charset="UTF-8">
   <title>samFProSoftware</title>
   <style>
-    /* Your CSS styles here */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    
+    nav {
+      background-color: #666;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+    
+    main {
+      padding: 20px;
+    }
+    
+    h1 {
+      font-size: 32px;
+    }
+    
+    h2 {
+      font-size: 24px;
+    }
+    
+    .project-list {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .project-list li {
+      margin-bottom: 10px;
+    }
+    
+    .slide-container {
+      position: relative;
+      height: 300px;
+      overflow: hidden;
+    }
+    
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .slide.active {
+      opacity: 1;
+    }
   </style>
 </head>
 <body>
