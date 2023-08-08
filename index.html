@@ -1,176 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>samFProSoftware</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-    
-    header {
-      background-color: #333;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-    }
-    
-    nav {
-      background-color: #666;
-      color: #fff;
-      padding: 10px;
-      text-align: center;
-    }
-    
-    main {
-      padding: 20px;
-    }
-    
-    h1 {
-      font-size: 32px;
-    }
-    
-    h2 {
-      font-size: 24px;
-    }
-    
-    .project-list {
-      list-style: none;
-      padding: 0;
-    }
-    
-    .project-list li {
-      margin-bottom: 10px;
-    }
-    
-    .slide-container {
-      position: relative;
-      height: 300px;
-      overflow: hidden;
-    }
-    
-    .slide {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      opacity: 0;
-      transition: opacity 0.5s ease-in-out;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    
-    .slide.active {
-      opacity: 1;
-    }
-    
-    .project-image {
-      width: 200px;
-      height: 200px;
-      background-color: #ccc;
-      margin-bottom: 10px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>samFPro Home</title>
 </head>
 <body>
-  <header>
-    <h1>Welcome to SamFProSoftware</h1>
-  </header>
-  <nav>
-    <a href="#blog">Blog</a> |
-    <a href="#music">Music</a> |
-    <a href="#projects">Projects</a> |
-    <a href="#published">Published Work</a> |
-    <a href="#privacy">Privacy Policy</a>
-  </nav>
-  <main>
-    <section id="blog" class="slide">
-      <h2>Blog</h2>
-      <!-- Your blog content here -->
-    </section>
-    <section id="music" class="slide">
-      <h2>Music</h2>
-      <!-- Your music content here -->
-    </section>
-    <section id="projects" class="slide">
-      <h2>Projects</h2>
-      <ul class="project-list">
-        <li>Project 1</li>
-        <li>Project 2</li>
-        <li>Project 3</li>
-      </ul>
-      <div class="slide-container">
-        <div class="project-image"><img src = "IMG_2241.jpeg"></div>
-        <div class="project-image"></div>
-        <div class="project-image"></div>
-      </div>
-    </section>
-    <section id="published" class="slide">
-      <h2>Published Work</h2>
-      <p>Check out our apps on the Play Store:</p>
-      <ul class="project-list">
-        <li><a href="https://play.google.com/store/apps/details?id=com.example.app1">App 1</a></li>
-        <li><a href="https://play.google.com/store/apps/details?id=com.example.app2">App 2</a></li>
-        <li><a href="https://play.google.com/store/apps/details?id=com.example.app3">App 3</a></li>
-      </ul>
-    </section>
-    <section id="privacy" class="slide">
-      <h2>Privacy Policy</h2>
-      This app respects your privacy and does not collect or share any personal data without your consent. This app follows the Google Play's Data safety section guidelines and discloses how it handles your data. This app uses Google Play Protect to scan for malware and unwanted software. This app does not use any financial services, real-money gambling, games, or contests that require personal information. This app does not impersonate or infringe on any intellectual property rights of others. This app does not use any deceptive or malicious behavior to abuse or misuse your device or network. This app does not target children or violate any relevant laws. This app provides a basic degree of functionality and a respectful user experience. You can find more details about this app's data safety practices in the Data safety section of its Google Play listing, the privacy policy, or other documentation.
-    </section>
-  </main>
-  
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Get all the section links
-      const sectionLinks = document.querySelectorAll('nav a');
+    <div class="title-section">
+        <div class="title-graphic">
+            <img src="img/title-graphic.JPG" width="320" alt="samFPro">
+        </div>
+        <div class="menu">
+            <a href="#current-projects">Current Projects</a>
+            <a href="#published-works">Published Works</a>
+            <a href="#music">Music</a>
+        </div>
+    </div>
 
-      // Attach click event listener to each section link
-      sectionLinks.forEach(function(link) {
-        link.addEventListener('click', function(e) {
-          e.preventDefault();
-          const targetId = this.getAttribute('href');
-          const targetSection = document.querySelector(targetId);
-          const targetOffset = targetSection.offsetTop;
+    <div class="sections-container">
+        <!-- Current Projects section -->
+        <div class="section" id="current-projects" data-title="Current Projects">
+            <h2>Current Projects</h2>
+            <div class="section-content">
+                <div class="card">
+                    <img src="img/beatwriter-title.JPEG" alt="beatwriter">
+                    <p class="description">beatwriter: the ultimate rap notebook.</p>
+                </div>
+            </div>
+        </div>
+        <div class="section" id="published-works" data-title="Published Works">
+            <h2>Published Works</h2>
+            <div class="section-content">
+                <div class="card">
+                    <img src="img/caustic-expansion-pack-VCR1.PNG" alt="VCR Vol. 1">
+                    <p class="description">VCR Vol. 1</p>
+                </div>
+                <div class="card">
+                    <img src="img/caustic-expansion-pack-CPK1.PNG" alt="CPK Vol. 1">
+                    <p class="description">CPK Vol. 1</p>
+                </div>
+              <div class="card">
+                    <img src="img/caustic-expansion-pack-SB.jpg" alt="Supear Bedet">
+                    <p class="description">Supear Bedet - Coming Soon</p>
+                </div>
+            </div>
+        </div>
+        <div class="section" id="music" data-title="Music">
+            <h2>Music</h2>
+            <div class="section-content">
+                <div class="card">
+                    <img src="img/sam-fresh-produce-cover.PNG" alt="sickassmick Fresh Produce">
+                    <p class="description">sickassmick free beats iii on soundclick</p>
+                </div>
+                <div class="card">
+                    <img src="img/the-perge-spit-twiddles-cover.jpeg" alt="The Perge - Spit Twiddles">
+                    <p class="description">The Perge - Spit Twiddles</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
-          // Scroll smoothly to the target section
-          window.scrollTo({
-            top: targetOffset,
-            behavior: 'smooth'
-          });
-
-          // Activate the target section
-          activateSlide(targetSection);
-        });
-      });
-
-      // Additional code for the slide functionality
-      function activateSlide(targetSection) {
-        const slides = document.getElementsByClassName('slide');
-        for (let i = 0; i < slides.length; i++) {
-          slides[i].classList.remove('active');
-        }
-        targetSection.classList.add('active');
-      }
-
-      let slideIndex = 0; // Set the initial slide index
-      const slides = document.getElementsByClassName('slide');
-
-      function showNextSlide() {
-        slideIndex = (slideIndex + 1) % slides.length;
-        activateSlide(slides[slideIndex]);
-      }
-
-      // Show the next slide every 3 seconds
-      setInterval(showNextSlide, 3000);
-
-      // Call the activateSlide function to show the initial slide
-      activateSlide(slides[slideIndex]);
-    });
-  </script>
+    <script src="scripts.js"></script>
 </body>
 </html>
