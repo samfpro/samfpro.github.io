@@ -60,14 +60,14 @@
                 </div>
             </div>
         </div>
-                <div class = "section" id="blog" data-title="Blog">
+        <div class = "section" id="blog" data-title="Blog">
             <h2>Blog</h2>
             <div class="section-content">
                 <div class="card" id="blog-card">
-  <h3>Latest Blog Post</h3>
-  <div id="blog-content">
+                    <h3>Latest Blog Post</h3>
+                    <div id="blog-content">
       
-  </div>
+                </div>
                         
             </div>
         </div>
@@ -76,11 +76,12 @@
     <script src="scripts.js"></script>
         <script>
   fetch('blog_09-05-2023.html')
-    .then(response => response.text()
+    .then(response => response.text())
     .then(html => {
       const blogContent = document.querySelector('#blog-content');
       blogContent.innerHTML = html;
     });
-        </script>
+        
+    </script>
 </body>
 </html>
